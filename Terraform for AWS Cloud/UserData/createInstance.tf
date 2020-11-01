@@ -12,11 +12,11 @@ resource "aws_instance" "MyFirstInstnace" {
   key_name      = aws_key_pair.levelup_key.key_name
 
   user_data = <<EOF
-		#!/bin/bash
-    apt-get update
-    apt-get -y install nginx
-    service nginx start
-	EOF
+  #!/bin/bash
+  apt-get update
+  apt-get -y install nginx
+  service nginx start
+  EOF
 
   tags = {
     Name = "custom_instance"
