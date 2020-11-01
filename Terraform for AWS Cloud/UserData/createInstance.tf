@@ -11,13 +11,7 @@ resource "aws_instance" "MyFirstInstnace" {
   availability_zone = "us-east-2a"
   key_name      = aws_key_pair.levelup_key.key_name
 
-  user_data = <<EOF
-  #!/bin/bash
-  apt-get update
-  apt-get -y install nginx
-  service nginx start
-  EOF
-
+  user_data = "#!/bin/bash; apt-get update; apt-get -y install nginx; service nginx start"
   tags = {
     Name = "custom_instance"
   }
