@@ -13,11 +13,9 @@ resource "aws_instance" "MyFirstInstnace" {
 
   user_data = <<EOF
 		#! /bin/bash
-    sudo apt-get update
-		sudo apt-get install -y apache2
-		sudo systemctl start apache2
-		sudo systemctl enable apache2
-		echo "<h1>Deployed Machine via Terraform</h1>" | sudo tee /var/www/html/index.html
+    apt-get update
+    apt-get -y install nginx
+    service nginx start
 	EOF
 
   tags = {
