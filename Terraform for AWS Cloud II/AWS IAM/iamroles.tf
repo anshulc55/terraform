@@ -3,7 +3,7 @@ resource "aws_iam_role" "s3-levelup-bucket-role" {
   name               = "s3-levelup-bucket-role"
   assume_role_policy = <<EOF
 {
-  "Version": "2020-11-07",
+  "Version": "2012-10-17",
   "Statement": [
     {
       "Action": "sts:AssumeRole",
@@ -30,7 +30,7 @@ resource "aws_iam_role_policy" "s3-levelup-bucket-role-policy" {
   role = aws_iam_role.s3-levelup-bucket-role.id
   policy = <<EOF
 {
-    "Version": "2020-11-07",
+    "Version": "2012-10-17",
     "Statement": [
         {
             "Effect": "Allow",
