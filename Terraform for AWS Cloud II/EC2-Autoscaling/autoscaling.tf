@@ -6,6 +6,12 @@ resource "aws_launch_configuration" "levelup-launchconfig" {
   key_name        = aws_key_pair.levelup_key.key_name
 }
 
+#Generate Key
+resource "aws_key_pair" "levelup_key" {
+    key_name = "levelup_key"
+    public_key = file(var.PATH_TO_PUBLIC_KEY)
+}
+
 #Autoscaling Group
 resource "aws_autoscaling_group" "levelup-autoscaling" {
   name                      = "levelup-autoscaling"
