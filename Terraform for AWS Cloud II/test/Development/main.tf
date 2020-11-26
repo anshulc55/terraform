@@ -1,5 +1,5 @@
 module "dev-vpc"{
-    source = "../test"
+    source = "../../test"
 
     vpcname = "dev01-vpc"
     cidr = "10.0.0.0/16"
