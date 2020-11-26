@@ -2,7 +2,7 @@ module "dev-vpc"{
     source                          = "../../test"
 
     vpcname                         = "dev01-vpc"
-    cidr                            = "10.0.0.0/16"
+    cidr                            = "10.0.2.0/24"
     enable_dns_support              = "true"
     enable_classiclink              = "false"
     enable_classiclink_dns_support  = "false"

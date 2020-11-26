@@ -1,11 +1,11 @@
 variable "AWS_ACCESS_KEY" {
-    type    = string
-    default = "AKIASMSIZOF42P2VUDSZ"
+    type        = string
+    default     = "AKIASMSIZOF42P2VUDSZ"
 }
 
 variable "AWS_REGION" {
-    type    = string
-    default = "us-east-2"
+    type        = string
+    default     = "us-east-2"
 }
 
 variable "vpcname" {

@@ -1,7 +1,6 @@
 # VPC
-resource "aws_vpc" "this" {
+resource "aws_vpc" "aws_vpc_levelup" {
 
-  name                             = var.vpcname
   cidr_block                       = var.cidr
   instance_tenancy                 = var.instance_tenancy
   enable_dns_hostnames             = var.enable_dns_hostnames
