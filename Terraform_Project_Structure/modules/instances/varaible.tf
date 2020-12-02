@@ -24,7 +24,7 @@ variable "AMIS" {
         us-east-1 = "ami-0f40c8f97004632f9"
         us-east-2 = "ami-05692172625678b4e"
         us-west-2 = "ami-02c8896b265d8c480"
-        us-west-1 = "ami-055a0e87092ed2ba4"
+        eu-west-1 = "ami-0cdd3aca00188622e"
     }
 }
 
