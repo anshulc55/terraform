@@ -38,6 +38,7 @@ resource "aws_instance" "my-instance" {
 
   # the VPC subnet
   subnet_id = element(var.PUBLIC_SUBNETS, 0)
+  availability_zone = "${var.AWS_REGION}a"
 
   # the security group
   vpc_security_group_ids = [aws_security_group.allow-ssh.id]
