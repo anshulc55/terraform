@@ -21,7 +21,7 @@ module "levelup-vpc" {
 #Output Specific to Custom VPC
 output "my_vpc_id" {
   description = "VPC ID"
-  value       = module.levelup-vpc.my_vpc_id
+  value       = module.levelup-vpc.vpc_id
 }
 
 output "private_subnets" {

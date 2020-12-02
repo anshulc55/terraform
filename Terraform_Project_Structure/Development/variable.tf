@@ -3,7 +3,7 @@ variable "AWS_REGION" {
     default = "us-west-2"
 }
 
-variable "ENVIRONMENT" {
+variable "Env" {
     type    = string
     default = "development"
 }

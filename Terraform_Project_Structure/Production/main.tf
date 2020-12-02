@@ -1,19 +1,19 @@
 # Create Resource for Development Environment
 
-module "dev-vpc" {
+module "prod-vpc" {
     source      = "../modules/vpc"
 
     ENVIRONMENT = var.Env
     AWS_REGION  = var.AWS_REGION
 }
 
-module "dev-instances" {
+module "prod-instances" {
     source          = "../modules/instances"
 
     ENVIRONMENT     = var.Env
     AWS_REGION      = var.AWS_REGION 
-    VPC_ID          = module.dev-vpc.my_vpc_id
-    PUBLIC_SUBNETS  = module.dev-vpc.public_subnets
+    VPC_ID          = module.prod-vpc.my_vpc_id
+    PUBLIC_SUBNETS  = module.prod-vpc.public_subnets
 }
 
 provider "aws" {
