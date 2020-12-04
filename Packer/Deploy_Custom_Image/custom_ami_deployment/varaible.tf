@@ -9,6 +9,11 @@ variable "ENVIRONMENT" {
     default = "development"
 }
 
+variable "AMI_ID" {
+    type    = string
+    default = ""
+}
+
 variable "AWS_REGION" {
 default = "us-east-2"
 }
