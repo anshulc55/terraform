@@ -5,6 +5,13 @@ module "levelup-vpc" {
     AWS_REGION  = var.AWS_REGION
 }
 
+module "levelup-rds" {
+    source      = "../module/rds"
+
+    ENVIRONMENT = var.ENVIRONMENT
+    AWS_REGION  = var.AWS_REGION
+}
+
 resource "aws_security_group" "levelup_webservers"{
   tags = {
     Name = "${var.ENVIRONMENT}-levelup-webservers"

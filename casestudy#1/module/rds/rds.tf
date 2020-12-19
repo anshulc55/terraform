@@ -8,9 +8,9 @@ module "levelup-vpc" {
 }
 
 #Define Subnet Group for RDS Service
-resource "aws_db_subnet_group" "levelup_rds_subnet_group" {
+resource "aws_db_subnet_group" "levelup-rds-subnet-group" {
 
-    name          = "${var.ENVIRONMENT}_levelup_db_subnet"
+    name          = "${var.ENVIRONMENT}-levelup-db-snet"
     description   = "Allowed subnets for DB cluster instances"
     subnet_ids    = [
       "${module.levelup-vpc.private_subnet1_id}",
@@ -22,7 +22,7 @@ resource "aws_db_subnet_group" "levelup_rds_subnet_group" {
 }
 
 #Define Security Groups for RDS Instances
-resource "aws_security_group" "levelup_rds-sg" {
+resource "aws_security_group" "levelup-rds-sg" {
 
   name = "${var.ENVIRONMENT}-levelup-rds-sg"
   description = "Created by LevelUp"
@@ -33,14 +33,6 @@ resource "aws_security_group" "levelup_rds-sg" {
     to_port = 3306
     protocol = "tcp"
     cidr_blocks = ["${var.RDS_CIDR}"]
-
-  }
-
-  ingress {
-    from_port = 3306
-    to_port = 3306
-    protocol = "tcp"
-    security_groups = ["${var.app_server_sg_id}"]
 
   }
 
@@ -56,7 +48,7 @@ resource "aws_security_group" "levelup_rds-sg" {
    }
 }
 
-resource "aws_db_instance" "levelup_rds" {
+resource "aws_db_instance" "levelup-rds" {
   identifier = "${var.ENVIRONMENT}-levelup-rds"
   allocated_storage = var.LEVELUP_RDS_ALLOCATED_STORAGE
   storage_type = "gp2"
@@ -68,10 +60,10 @@ resource "aws_db_instance" "levelup_rds" {
   username = var.LEVELUP_RDS_USERNAME
   password = var.LEVELUP_RDS_PASSWORD
   vpc_security_group_ids = aws_security_group.levelup_rds-sg.id
-  db_subnet_group_name = aws_db_subnet_group.levelup_rds_subnet_group.name
+  db_subnet_group_name = aws_db_subnet_group.levelup-rds-subnet-group.name
   multi_az = "true"
 }
 
 output "rds_prod_endpoint" {
-  value = aws_db_instance.levelup_rds.endpoint
+  value = aws_db_instance.levelup-rds.endpoint
 }
