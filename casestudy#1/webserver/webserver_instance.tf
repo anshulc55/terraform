@@ -76,11 +76,11 @@ resource "aws_autoscaling_group" "levelup_webserver" {
   force_delete              = true
   launch_configuration      = aws_launch_configuration.launch_config_webserver.name
   vpc_zone_identifier       = ["${module.levelup-vpc.public_subnet1_id}", "${module.levelup-vpc.public_subnet2_id}"]
-  target_group_arns         = ["${aws_lb_target_group.front_end.arn}"]
+  target_group_arns         = [aws_lb_target_group.load-balancer-target-group.arn]
 }
 
 #Application load balancer for app server
-resource "aws_lb" "levelup_load_balancer" {
+resource "aws_lb" "levelup-load-balancer" {
   name               = "${var.ENVIRONMENT}-levelup_load_balancer"
   internal           = false
   load_balancer_type = "application"
@@ -99,7 +99,7 @@ resource "aws_lb_target_group" "load-balancer-target-group" {
 
 # Adding HTTP listener
 resource "aws_lb_listener" "webserver_listner" {
-  load_balancer_arn = aws_lb.load-balancer-target-group.arn
+  load_balancer_arn = aws_lb.levelup-load-balancer.arn
   port              = "80"
   protocol          = "HTTP"
 
