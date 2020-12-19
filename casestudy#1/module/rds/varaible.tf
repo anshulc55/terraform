@@ -16,7 +16,7 @@ variable "LEVELUP_RDS_USERNAME" {
 }
 
 variable "LEVELUP_RDS_PASSWORD" {
-    default = "testdb@123#"
+    default = "testdb12345"
 }
 
 variable "LEVELUP_RDS_ALLOCATED_STORAGE" {
