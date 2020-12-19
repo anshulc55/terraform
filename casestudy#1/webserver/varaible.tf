@@ -24,3 +24,8 @@ variable "ENVIRONMENT" {
   type        = string
   default     = "Development"
 }
+
+variable "public_key_path" {
+  description = "Public key path"
+  default = "~/.ssh/levelup_key.pub"
+}

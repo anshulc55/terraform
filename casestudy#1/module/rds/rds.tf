@@ -16,7 +16,7 @@ resource "aws_db_subnet_group" "levelup_rds_subnet_group" {
       "${module.levelup-vpc.private_subnet1_id}",
       "${module.levelup-vpc.private_subnet2_id}",
     ]
-    tags {
+    tags = {
         Name         = "${var.ENVIRONMENT}_levelup_db_subnet"
     }
 }
@@ -51,7 +51,7 @@ resource "aws_security_group" "levelup_rds-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-    tags {
+    tags = {
     Name = "${var.ENVIRONMENT}-levelup-rds-sg"
    }
 }

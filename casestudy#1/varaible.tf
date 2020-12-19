@@ -1,7 +1,3 @@
-variable "public_key_path" {
-  description = "Public key path"
-  default = "~/.ssh/levelup_key.pub"
-}
 
 variable "ENVIRONMENT" {
     type    = string

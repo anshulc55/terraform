@@ -6,7 +6,7 @@ module "levelup-vpc" {
 }
 
 resource "aws_security_group" "levelup_webservers"{
-  tags {
+  tags = {
     Name = "${var.ENVIRONMENT}-levelup-webservers"
   }
   
@@ -110,5 +110,5 @@ resource "aws_lb_listener" "webserver_listner" {
 }
 
 output "load_balancer_output" {
-  value = aws_lb.load_balancer_target_group.dns_name
+  value = aws_lb.levelup_load_balancer.dns_name
 }

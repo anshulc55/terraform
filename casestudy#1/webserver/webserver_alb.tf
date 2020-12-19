@@ -1,5 +1,5 @@
 resource "aws_security_group" "levelup_webservers_alb" {
-  tags {
+  tags = {
     Name = "${var.ENVIRONMENT}-levelup-webservers-ALB"
   }
   name = "${var.ENVIRONMENT}-levelup-webservers-ALB"
