@@ -1,5 +1,5 @@
 module "levelup-vpc" {
-    source      = "../webserver"
+    source      = "./webserver"
 
     ENVIRONMENT = var.ENVIRONMENT
     AWS_REGION  = var.AWS_REGION
