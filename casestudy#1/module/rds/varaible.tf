@@ -11,11 +11,11 @@ variable "PUBLICLY_ACCESSIBLE" {
     default = "true"
 }
 
-variable "RDS_USERNAME" {
+variable "LEVELUP_RDS_USERNAME" {
     default = "testdb"
 }
 
-variable "RDS_PASSWORD" {
+variable "LEVELUP_RDS_PASSWORD" {
     default = "testdb@123#"
 }
 
