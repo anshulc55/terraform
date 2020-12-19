@@ -81,7 +81,7 @@ resource "aws_autoscaling_group" "levelup_webserver" {
 
 #Application load balancer for app server
 resource "aws_lb" "levelup-load-balancer" {
-  name               = "${var.ENVIRONMENT}-levelup_load_balancer"
+  name               = "${var.ENVIRONMENT}-levelup-lb"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.levelup_webservers_alb.id]

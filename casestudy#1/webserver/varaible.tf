@@ -8,7 +8,7 @@ variable "INSTANCE_TYPE" {
 }
 
 variable "USER_DATA_FOR_WEBSERVER" {
-    default = "./demo_code/web.sh"
+    default = "~/demo_code/web.sh"
 }
 
 variable "AMIS" {
