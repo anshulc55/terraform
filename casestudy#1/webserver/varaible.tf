@@ -3,15 +3,18 @@ variable "SSH_CIDR_WEB_SERVER" {
     default = "0.0.0.0/0"
 }
 
-variable "WEB_SERVER_INSTANCE_TYPE"{
-    type = string
-    default = "t2.micro"
+variable "INSTANCE_TYPE" {
+  default = "t2.micro"
 }
-
 
 variable "USER_DATA_FOR_WEBSERVER" {
     type = string
     default = "./demo_code/web.sh"
+}
+variable "AMIS" {
+    type = map
+    default = {}
+    
 }
 
 variable "AWS_REGION" {

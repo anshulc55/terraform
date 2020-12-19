@@ -90,8 +90,8 @@ resource "aws_lb" "levelup_load_balancer" {
 }
 
 # Add Target Group
-resource "aws_lb_target_group" "load_balancer_target_group" {
-  name     = "load_balancer_target_group"
+resource "aws_lb_target_group" "load-balancer-target-group" {
+  name     = "load-balancer-target-group"
   port     = 80
   protocol = "HTTP"
   vpc_id   = module.levelup-vpc.my_vpc_id
@@ -99,12 +99,12 @@ resource "aws_lb_target_group" "load_balancer_target_group" {
 
 # Adding HTTP listener
 resource "aws_lb_listener" "webserver_listner" {
-  load_balancer_arn = aws_lb.load_balancer_target_group.arn
+  load_balancer_arn = aws_lb.load-balancer-target-group.arn
   port              = "80"
   protocol          = "HTTP"
 
   default_action {
-    target_group_arn = aws_lb_target_group.load_balancer_target_group.arn
+    target_group_arn = aws_lb_target_group.load-balancer-target-group.arn
     type             = "forward"
   }
 }
