@@ -56,8 +56,8 @@ resource "aws_launch_configuration" "launch_config_webserver" {
   name   = "launch_config_webserver"
   image_id      = lookup(var.AMIS, var.AWS_REGION)
   instance_type = var.INSTANCE_TYPE
-  user_data = file("${var.USER_DATA_FOR_WEBSERVER}")
-  security_groups = ["${aws_security_group.levelup_webservers.id}"]
+  user_data = file(var.USER_DATA_FOR_WEBSERVER)
+  security_groups = [aws_security_group.levelup_webservers.id]
   key_name = aws_key_pair.levelup_key.key_name
   
   root_block_device {
@@ -84,7 +84,7 @@ resource "aws_lb" "levelup-load-balancer" {
   name               = "${var.ENVIRONMENT}-levelup_load_balancer"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = aws_security_group.levelup_webservers_alb.id
+  security_groups    = [aws_security_group.levelup_webservers_alb.id]
   subnets            = ["${module.levelup-vpc.public_subnet1_id}", "${module.levelup-vpc.public_subnet2_id}"]
 
 }
