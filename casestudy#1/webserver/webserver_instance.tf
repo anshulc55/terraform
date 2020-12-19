@@ -110,5 +110,5 @@ resource "aws_lb_listener" "webserver_listner" {
 }
 
 output "load_balancer_output" {
-  value = aws_lb.levelup_load_balancer.dns_name
+  value = aws_lb.levelup-load-balancer.dns_name
 }
