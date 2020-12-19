@@ -56,7 +56,7 @@ resource "aws_launch_configuration" "launch_config_webserver" {
   name   = "launch_config_webserver"
   image_id      = lookup(var.AMIS, var.AWS_REGION)
   instance_type = var.INSTANCE_TYPE
-  user_data = "${file("${var.USER_DATA_FOR_WEBSERVER}")}"
+  user_data = file("${var.USER_DATA_FOR_WEBSERVER}")
   security_groups = ["${aws_security_group.levelup_webservers.id}"]
   key_name = aws_key_pair.levelup_key.key_name
   
@@ -109,6 +109,6 @@ resource "aws_lb_listener" "webserver_listner" {
   }
 }
 
-output "Web Server Load Balancer Endpoint" {
+output "load_balancer_output" {
   value = aws_lb.load_balancer_target_group.dns_name
 }

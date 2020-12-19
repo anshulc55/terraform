@@ -67,7 +67,7 @@ resource "aws_internet_gateway" "levelup_igw" {
 # ELastic IP for NAT Gateway
 resource "aws_eip" "levelup_nat_eip" {
   vpc      = true
-  depends_on = ["aws_internet_gateway.levelup_igw"]
+  depends_on = [aws_internet_gateway.levelup_igw]
 }
 
 # NAT gateway for private ip address
