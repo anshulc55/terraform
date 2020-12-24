@@ -1,3 +1,12 @@
+
+#Call VPC Module First to get the Subnet IDs
+module "levelup-vpc" {
+    source      = "../vpc"
+
+    ENVIRONMENT = var.ENVIRONMENT
+    AWS_REGION  = var.AWS_REGION
+}
+
 #Define Subnet Group for RDS Service
 resource "aws_db_subnet_group" "levelup-rds-subnet-group" {
 
