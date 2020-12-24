@@ -7,10 +7,6 @@ variable "INSTANCE_TYPE" {
   default = "t2.micro"
 }
 
-variable "USER_DATA_FOR_WEBSERVER" {
-    default = "web.sh"
-}
-
 variable "AMIS" {
     type = map
     default = {
