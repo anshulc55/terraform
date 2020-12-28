@@ -35,8 +35,10 @@ resource "aws_autoscaling_group" "eks-node-autoscaling" {
   name = "levelup-eks-auto-scaling"
   vpc_zone_identifier = module.vpc.public_subnets
 
-  tags = {
-    Name = "levelup-eks-auto-scaling"
-  }
+   tag {
+    key                 = "Name"
+    value               = "LevelUp Custom EC2 instance"
+    propagate_at_launch = true
+   }
 }
 
