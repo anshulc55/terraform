@@ -1,9 +1,9 @@
 variable "AWS_REGION" {
-default = "us-east-2"
+default = "ap-south-1"
 }
 
 provider "aws" {
-  region     = "us-east-2"
+  region     = "ap-south-1"
 }
 
 variable "AMIS" {
@@ -13,6 +13,7 @@ variable "AMIS" {
         us-east-2 = "ami-05edbb8e25e281608"
         us-west-2 = "ami-0352d5a37fb4f603f"
         us-west-1 = "ami-0f40c8f97004632f9"
+        ap-south-1 = "ami-0fd48e51ec5606ac1"
     }
 }
 
