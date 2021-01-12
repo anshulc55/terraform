@@ -3,9 +3,7 @@
 sudo apt update
 sudo apt-get upgrade -y
 sudo apt-get install default-jre -y
-
-sudo apt-get install fish -y
-fish
+sudo java -version
 
 # install elasticsearch
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
