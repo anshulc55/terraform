@@ -6,7 +6,7 @@ provider "aws" {
     version = "3.53.0"
     access_key = "AKIASMSIZOF4QD2NTPB6"
     secret_key = "SECRET_KEY_HERE"
-    region     = "us-east-2
+    region     = "us-east-2"
 }
 
 # Configure the Microsoft Azure Provider
