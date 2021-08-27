@@ -1,7 +1,7 @@
 module "firewall_rules" {
   source       = "terraform-google-modules/network/google//modules/firewall-rules"
-  project_id   = var.project_id
-  network_name = <NETWORK NAME>
+  project_id   = var.project
+  network_name = var.network_name
 
   rules = [{
     name                    = "allow-ssh-ingress"

@@ -1,21 +1,29 @@
+provider "google" {
+    credentials = file("service-demo-project-276314-b21400581d00.json")
+
+    project = var.project
+    region  = var.region
+    zone    = var.zone
+}
+
 module "vpc" {
     source  = "terraform-google-modules/network/google"
     version = "~> 3.0"
 
-    project_id   = "<PROJECT ID>"
-    network_name = "my-vpc-netork"
+    project_id   = var.project
+    network_name = var.network_name
     routing_mode = "GLOBAL"
 
     subnets = [
         {
             subnet_name           = "subnet-01"
-            subnet_ip             = "10.10.10.0/24"
+            subnet_ip             = var.subnet_01_ip
             subnet_region         = "us-east1"
         },
         {
             subnet_name           = "subnet-02"
-            subnet_ip             = "10.10.20.0/24"
-            subnet_region         = "us-east1"
+            subnet_ip             = var.subnet_02_ip
+            subnet_region         = "us-east2"
             subnet_private_access = "true"
             subnet_flow_logs      = "true"
             description           = "This is Subnet Two."

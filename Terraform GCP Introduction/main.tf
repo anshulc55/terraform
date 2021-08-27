@@ -15,6 +15,6 @@ terraform {
   backend "gcs" {
     bucket  = "levelup360-terraform"
     prefix  = "terraform-practice"
-    credentials = file("service-demo-project-276314-b21400581d00.json")
+    credentials = "service-demo-project-276314-b21400581d00.json"
   }
 }
