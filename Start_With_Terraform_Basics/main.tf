@@ -1,15 +1,8 @@
-## Provider's Example
-
-# Configure the AWS Provider
-provider "aws" {
-    version = "3.53.0"
-    access_key = "AKIAXC3FBB2OJJC3DUIP"
-    secret_key = "SECRET_KEY"
-    region     = "us-east-2"
-}
-
-# Configure the Microsoft Azure Provider
-provider "azurerm" {
-    version = "2.72.0"
-    features {}
+resource "aws_instance" "MyFirstInstnace" {
+  count         = 5
+  ami           = "ami-0a8b4cd432b1c3063"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "demoinstance-${count.index}"
+  }
 }
