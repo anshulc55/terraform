@@ -3,9 +3,9 @@
 # Configure the AWS Provider
 provider "aws" {
     version = "3.53.0"
-    access_key = "AKIAXC3FBB2OJJC3DUIP"
-    secret_key = "SECRET_KEY"
-    region     = "us-east-2"
+    access_key = "AKIAXQCRRJPD2W76GC75"
+    secret_key = "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"
+    region     = "us-west-2"
 }
 
 # Configure the Microsoft Azure Provider
